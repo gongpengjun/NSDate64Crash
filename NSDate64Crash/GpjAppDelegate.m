@@ -14,7 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSDate * date = [NSDate distantFuture];
-    objc_setAssociatedObject( date, "kAssociatedFlag", @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC); //Crash!!!
+    //Crash!!!
+    objc_setAssociatedObject( date, "kAssociatedFlag",@(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return YES;
 }
 							
