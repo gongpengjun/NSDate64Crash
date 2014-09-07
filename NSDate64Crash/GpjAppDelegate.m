@@ -7,12 +7,14 @@
 //
 
 #import "GpjAppDelegate.h"
+#import <objc/runtime.h>
 
 @implementation GpjAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSDate * date = [NSDate distantFuture];
+    objc_setAssociatedObject( date, "kAssociatedFlag", @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC); //Crash!!!
     return YES;
 }
 							
